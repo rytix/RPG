@@ -1,1 +1,89 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			button{
+					background-color: #008CBA;
+					width: 98vw;
+				    border: none;
+				    color: white;
+				    padding: 15px 32px;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+			}
+			p { 
+				color: #333333; 
+				font-family: 'Raleway',sans-serif; 
+				font-size: 18px; 
+				font-weight: 500; 
+				line-height: 32px; 
+				margin: 0 0 24px; 
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="gerar()">Gerar Missão</button>
+		<p id="mensagem">...</p>
+		<script type="text/javascript">
+			function gerar(){
+				empregadores = [
+					"Sonho",
+					"Cartaz",
+					"Escritura na pedra",
+					"NPC"
+				]
+				acoes = [
+					"resgatar",
+					"caçar",
+					"assassinar",
+					"buscar",
+					"prender",
+					"negociar com"
+				]
+				personagens = [
+					"a princesa",
+					"o rei",
+					"os orfàos",
+					"o exercito vermelho",
+					"o lendario dragao",
+					"todos os sobreviventes",
+					"os dalmatas",
+					"o mago merlin",
+					"o guerreiro arco-iris",
+					"a visionaria do amanhã",
+					"a vaca sagrada",
+					"o imp enjoado",
+					"os gnomos traiçoeiros",
+					"o assassino mortal"
+				]
+				locais = [
+					"de dentro de uma caverna",
+					"em cima da montanha mais alta",
+					"em um vilarejo",
+					"na tundra",
+					"na floresta",
+					"nas ruinas",
+					"no porto de salin",
+					"nas ilhas distantes",
+					"na torre de vigilia",
+					"no barco pirata"
+				]
 
+				empregador = randomize(empregadores)
+				acao = randomize(acoes)
+				personagem = randomize(personagens)
+				local1 = randomize(locais)
+				local2 = randomize(locais)
+
+
+				frase = empregador+": Os jogadores estão "+local1+" e devem "+acao+" "+personagem+" "+local2
+				document.getElementById("mensagem").innerHTML = frase
+			}
+			function randomize(vet){
+				return vet[Math.floor((Math.random() * vet.length))]
+			}
+		</script>
+	</body>
+</html>
