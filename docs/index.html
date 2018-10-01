@@ -1,51 +1,38 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
 		<style type="text/css">
-			body{
-				background-size: cover;	
-				font-family: 'Charmonman', cursive;
-			}
-			.content{
-				padding: 10% 35%;
-				text-align: center;
-			}
 			button{
-				position: fixed;
-				bottom: 15%;
-				right: 35%;
-				background-color: #008CBA;
-				border: none;
-				color: white;
-				padding: 15px 32px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 16px;
+					background-color: #008CBA;
+					width: 98vw;
+				    border: none;
+				    color: white;
+				    padding: 15px 32px;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
 			}
 			p { 
 				color: #333333; 
-				
-				font-size: 50px; 
-				font-weight: 500;  
+				font-family: 'Raleway',sans-serif; 
+				font-size: 18px; 
+				font-weight: 500; 
+				line-height: 32px; 
 				margin: 0 0 24px; 
 			}
 		</style>
 	</head>
-	<body style="background-image: url('assets/npc.png')">
-		<div class="content">
-			<p id="mensagem">...</p>
-			<button onclick="gerar()">Gerar Missão</button>
-		</div>
-		
-		
+	<body>
+		<button onclick="gerar()">Gerar Missão</button>
+		<p id="mensagem">...</p>
 		<script type="text/javascript">
 			function gerar(){
 				empregadores = [
-					"sonho",
-					"cartaz",
-					"npc"
+					"Sonho",
+					"Cartaz",
+					"Escritura na pedra",
+					"NPC"
 				]
 				acoes = [
 					"resgatar",
@@ -89,10 +76,9 @@
 				personagem = randomize(personagens)
 				local1 = randomize(locais)
 				local2 = randomize(locais)
-				console.log("url('assets/'"+empregador+".png)")
-				document.body.style.backgroundImage = "url('assets/"+empregador+".png')";
-				
-				frase = "Os jogadores estão "+local1+" e devem "+acao+" "+personagem+" "+local2
+
+
+				frase = empregador+": Os jogadores estão "+local1+" e devem "+acao+" "+personagem+" "+local2
 				document.getElementById("mensagem").innerHTML = frase
 			}
 			function randomize(vet){
