@@ -1,6 +1,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
 		<style type="text/css">
 			body{
@@ -9,8 +11,14 @@
 				font-family: 'Charmonman', cursive;
 			}
 			.content{
-				padding: 10% 35%;
+				padding: 35% 10%;
 				text-align: center;
+			}
+			p { 
+				font-size: 30px; 
+				color: #333333;
+				font-weight: 500;  
+				margin: 0 0 24px; 
 			}
 			button{
 				position: fixed;
@@ -25,13 +33,40 @@
 				display: inline-block;
 				font-size: 16px;
 			}
-			p { 
-				color: #333333; 
-				
-				font-size: 50px; 
-				font-weight: 500;  
-				margin: 0 0 24px; 
+			
+			@media (min-width: 400px){
+				.content{
+					padding: 25% 15%;
+				}
+				p { 
+					font-size: 40px;
+				}
 			}
+			@media (min-width: 650px){
+				.content{
+					padding: 20% 20%;
+				}
+				p { 
+					font-size: 50px;
+				}
+			}
+			@media (min-width: 900px){
+				.content{
+					padding: 17% 25%;
+				}
+				p { 
+					font-size: 50px;
+				}
+			}
+			@media (min-width: 1200px) {
+				.content{
+					padding: 10% 35%;
+				}
+				p { 
+					font-size: 50px;
+				}
+			}
+			
 		</style>
 	</head>
 	<body style="background-image: url('assets/npc.png')">
